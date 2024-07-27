@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ lesson.title }}</title>
+</head>
+<body>
+    <h1>{{ lesson.title }}</h1>
+    <p>{{ lesson.description }}</p>
+    <p>Price: {{ lesson.price }}</p>
+    <p>Status: {{ lesson.status }}</p>
+    <p>Start Date: {{ lesson.start_date }}</p>
+    <p>End Date: {{ lesson.end_date }}</p>
+    <p>Category: {{ lesson.category }}</p>
+    <a href="{% url 'lesson_update' lesson.slug %}">Update</a>
+    <a href="{% url 'lesson_delete' lesson.slug %}">Delete</a>
+    <a href="{% url 'lesson_list' %}">Back to list</a>
+</body>
+</html>
