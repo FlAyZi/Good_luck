@@ -2,12 +2,23 @@
 <html>
 <head>
     <title>Create</title>
+        <style>
+        .thumbnail {
+            width: 300px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Create</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+            <div class="image">
+                {% if lesson.image %}
+                    <img src="{{ lesson.image.url }}" class="thumbnail mb-3" alt="{{ lesson.title }}">
+                {% endif %}
+                {{ form.as_p }}
+            </div>
         <button type="submit">Save</button>
     </form>
     <a href="{% url 'lesson_list' %}">Cancel</a>
